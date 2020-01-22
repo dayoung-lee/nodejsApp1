@@ -1,6 +1,8 @@
 var http = require('http');
 var fs = require('fs');
 var url = require('url');  // url module
+var express = require('express');
+var app = express();
 
 var app = http.createServer(function(request,response){
     var _url = request.url;
@@ -82,4 +84,8 @@ var app = http.createServer(function(request,response){
         response.end("Page Not found."); 
     }    
 });
-app.listen(3000);
+
+app.listen(process.env.PORT || 3000, function(){
+    console.log('Your node js server is running');
+});
+//app.listen(3000);
