@@ -132,7 +132,7 @@ var app = http.createServer(function(request,response){
         );
         response.writeHead(200);
         response.end(html); 
-        }); // readdir
+        }); 
     }else if(pathname === '/create_process'){
         var body = '';
         request.on('data', function(data){            
